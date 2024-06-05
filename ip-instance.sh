@@ -15,7 +15,7 @@ function verifyInstanceHasOutboundConnection() {
 function installNginx() {
   echo "Trying yum install"
   yum update -y
-  yum install nginx -y
+  amazon-linux-extras install nginx1 -y
   echo "Nginx installed"
 }
 
@@ -40,6 +40,8 @@ function main() {
   installNginx
   retrieveAndWriteTokenToNginxIndexFile
   startNginx
+
+  echo "END USER DATA"
 }
 
 main
